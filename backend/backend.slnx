@@ -1,2 +1,6 @@
 <Solution>
+  <Project Path="src/Skilladd.API/Skilladd.API.csproj" />
+  <Project Path="src/Skilladd.Application/Skilladd.Application.csproj" />
+  <Project Path="src/Skilladd.Domain/Skilladd.Domain.csproj" />
+  <Project Path="src/Skilladd.Infrastructure/Skilladd.Infrastructure.csproj" />
 </Solution>
