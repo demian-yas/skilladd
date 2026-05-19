@@ -1,6 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
+using Skilladd.Domain.Hiring.Enum.EnumCompany;
 
-namespace Skilladd.Domain.Hiring;
+namespace Skilladd.Domain.Hiring.Classes;
 
 public class Company
 {
@@ -9,8 +10,8 @@ public class Company
     // ef core
     private Company() { }
 
-    public Company(Guid ownerId ,string name, string slug, string description, string logoUrl, string website, string industry,
-        string location, DateTime createdAt)
+    private Company(Guid ownerId ,string name, string slug, string? description, string? logoUrl, string? website, string? industry,
+        CompanySize? size, string? location, DateTime createdAt)
     {
         Id = Guid.NewGuid();
         OwnerId = ownerId;
@@ -20,6 +21,7 @@ public class Company
         LogoUrl = logoUrl;
         Website = website;
         Industry = industry;
+        Size = size;
         Location = location;
         IsVerified = false;
         CreatedAt = createdAt;
@@ -41,7 +43,7 @@ public class Company
     
     public string? Industry { get; private set; }
     
-    // public enum? Size { get; set; }
+    public CompanySize? Size { get; set; }
     
     public string? Location { get; private set; }
     
@@ -53,27 +55,33 @@ public class Company
 
     public int JobPostsCount => JobPosts.Count;
 
-    public static Result<Company> Create(Guid ownerId, string name, string slug, string description, string logoUrl, string website,
-        string industry,
-        string location, bool isVerified, DateTime createdAt)
+    public static Result<Company> Create(Guid ownerId, string name, string slug, string? description, string? logoUrl, string? website,
+        string? industry, CompanySize? size,
+        string? location, DateTime createdAt)
     {
         if (string.IsNullOrWhiteSpace(name))
-            return Result.Failure<Company>("Name validation");
+            return Result.Failure<Company>("Name cannot be null or with whitespace");
+        
         if (string.IsNullOrWhiteSpace(slug))
-            return Result.Failure<Company>("Slug validation");
+            return Result.Failure<Company>("Slug cannot be null or with whitespace");
+        
         if (string.IsNullOrWhiteSpace(description))
-            return Result.Failure<Company>("Description validation");
+            return Result.Failure<Company>("Description cannot be null or with whitespace");
+        
         if (string.IsNullOrWhiteSpace(logoUrl))
-            return Result.Failure<Company>("Logo URL validation");
+            return Result.Failure<Company>("LogoUrl cannot be null or with whitespace");
+        
         if (string.IsNullOrWhiteSpace(website))
-            return Result.Failure<Company>("Website validation");
+            return Result.Failure<Company>("Website cannot be null or with whitespace");
+        
         if (string.IsNullOrWhiteSpace(industry))
-            return Result.Failure<Company>("Industry validation");
+            return Result.Failure<Company>("Industry cannot be null or with whitespace");
+        
         if (string.IsNullOrWhiteSpace(location))
-            return Result.Failure<Company>("Location validation");
+            return Result.Failure<Company>("Location cannot be null or with whitespace");
         
         var company = new Company(ownerId ,name, slug, description, logoUrl, website, industry,
-            location, createdAt);
+            size, location, createdAt);
         
         return Result.Success(company);
     }

@@ -1,15 +1,17 @@
 ﻿using CSharpFunctionalExtensions;
+using Skilladd.Domain.Hiring.Enum.EnumJobPost;
 
-namespace Skilladd.Domain.Hiring;
+namespace Skilladd.Domain.Hiring.Classes;
 
 public class JobPost
 {
     
     private JobPost(){}
 
-    public JobPost(Guid authorId, Guid companyId, string title, 
+    private JobPost(Guid authorId, Guid companyId, string title, 
         string description, string requirements, decimal? salaryFrom, 
-        decimal? salaryTo, string currency, string[] skills, 
+        decimal? salaryTo, string currency, EnumEmployment employment,
+        EnumFormat format, EnumStatus status, List<string> skills, 
         DateTime? expiresAt)
     {
         Id = Guid.NewGuid();
@@ -21,6 +23,9 @@ public class JobPost
         SalaryFrom = salaryFrom;
         SalaryTo = salaryTo;
         Currency = currency;
+        Employment = employment;
+        Format = format;
+        Status = status;
         Skills = skills;
         ExpiresAt = expiresAt;
         CreatedAt = DateTime.UtcNow;
@@ -28,7 +33,7 @@ public class JobPost
     
     public Guid Id { get; private set; }
     
-    public Company Company { get; private set; }
+    public Company? Company { get; private set; }
     public Guid CompanyId { get; private set; }
     
     public Guid AuthorId { get; private set; }
@@ -45,27 +50,35 @@ public class JobPost
     
     public string Currency { get; private set; } = null!;
     
-    //public enum Employment { get; set; }
+    public EnumEmployment Employment { get; private set; }
     
-    //public enum Format { get; set; }
+    public EnumFormat Format { get; private set; }
     
-    public string[] Skills { get; private set; } = null!;
+    public List<string> Skills { get; private set; } = null!;
     
-    //public enum Status { get; set; }
+    public EnumStatus Status { get; private set; }
     
     public DateTime? ExpiresAt { get; private set; }
     
     public DateTime CreatedAt { get; private set; }
 
-    public static Result<JobPost> Create(Guid authorId, Guid companyId, string title,
-        string description, string requirements, decimal? salaryFrom,
-        decimal? salaryTo, string currency, string[] skills,
+    public static Result<JobPost> Create(Guid authorId, Guid companyId, string title, 
+        string description, string requirements, decimal? salaryFrom, 
+        decimal? salaryTo, string currency, EnumEmployment employment,
+        EnumFormat format, EnumStatus status, List<string> skills, 
         DateTime? expiresAt)
     {
-        // валидация
+        
+        if(string.IsNullOrWhiteSpace(title))
+            return Result.Failure<JobPost>("Title is required");
+        if(string.IsNullOrWhiteSpace(description))
+            return Result.Failure<JobPost>("Description is required");
+        if(string.IsNullOrWhiteSpace(requirements))
+            return Result.Failure<JobPost>("Requirements is required");
+        
         var jobPostResult = new JobPost(authorId, companyId, title,
             description, requirements, salaryFrom,
-            salaryTo, currency, skills,
+            salaryTo, currency, employment, format, status, skills,
             expiresAt);
         
         return Result.Success(jobPostResult);
