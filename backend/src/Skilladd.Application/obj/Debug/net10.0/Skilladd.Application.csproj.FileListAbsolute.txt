@@ -1,0 +1,16 @@
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/bin/Debug/net10.0/Skilladd.Application.deps.json
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/bin/Debug/net10.0/Skilladd.Application.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/bin/Debug/net10.0/Skilladd.Application.pdb
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/bin/Debug/net10.0/Skilladd.Domain.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/bin/Debug/net10.0/Skilladd.Domain.pdb
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.csproj.AssemblyReference.cache
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.AssemblyInfoInputs.cache
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.AssemblyInfo.cs
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.csproj.CoreCompileInputs.cache
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.sourcelink.json
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.87EA2EAB.Up2Date
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/refint/Skilladd.Application.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.pdb
+/home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/ref/Skilladd.Application.dll

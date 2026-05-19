@@ -1,0 +1,12 @@
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/bin/Debug/net10.0/Skilladd.Domain.deps.json
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/bin/Debug/net10.0/Skilladd.Domain.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/bin/Debug/net10.0/Skilladd.Domain.pdb
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/Skilladd.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/Skilladd.Domain.AssemblyInfoInputs.cache
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/Skilladd.Domain.AssemblyInfo.cs
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/Skilladd.Domain.csproj.CoreCompileInputs.cache
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/Skilladd.Domain.sourcelink.json
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/Skilladd.Domain.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/refint/Skilladd.Domain.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/Skilladd.Domain.pdb
+/home/demian/projects/skilladd/backend/src/Skilladd.Domain/obj/Debug/net10.0/ref/Skilladd.Domain.dll

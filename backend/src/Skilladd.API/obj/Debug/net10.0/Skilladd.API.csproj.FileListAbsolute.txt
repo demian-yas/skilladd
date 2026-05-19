@@ -35,3 +35,9 @@
 /home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Skilladd.Application.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Skilladd.Domain.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Skilladd.Infrastructure.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Skilladd.Application.pdb
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Skilladd.Domain.pdb
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/Skilladd.Infrastructure.pdb

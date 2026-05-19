@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Skilladd.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3141b065ff8027c17293c3f6e56623269e8cb994")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d659f4d9a9235a5e0d5d374bb853646445917d04")]
 [assembly: System.Reflection.AssemblyProductAttribute("Skilladd.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Skilladd.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

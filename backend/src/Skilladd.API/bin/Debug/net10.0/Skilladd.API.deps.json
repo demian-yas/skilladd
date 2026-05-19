@@ -9,6 +9,9 @@
       "Skilladd.API/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "10.0.4",
+          "Skilladd.Application": "1.0.0",
+          "Skilladd.Domain": "1.0.0",
+          "Skilladd.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "10.1.7"
         },
         "runtime": {
@@ -70,6 +73,36 @@
             "fileVersion": "10.1.7.2427"
           }
         }
+      },
+      "Skilladd.Application/1.0.0": {
+        "dependencies": {
+          "Skilladd.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Skilladd.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Skilladd.Domain/1.0.0": {
+        "runtime": {
+          "Skilladd.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Skilladd.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Skilladd.Application": "1.0.0"
+        },
+        "runtime": {
+          "Skilladd.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -120,6 +153,21 @@
       "sha512": "sha512-iJo3ODyUb/M8Vm8AH1r9y9iAba0w95xsCn3zFVl96ISRHbTDWxi+l7oFVCZqUEdjd97B8VMDPnMliWAdomR8uw==",
       "path": "swashbuckle.aspnetcore.swaggerui/10.1.7",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.10.1.7.nupkg.sha512"
+    },
+    "Skilladd.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Skilladd.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Skilladd.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

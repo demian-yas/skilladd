@@ -1,0 +1,55 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Skilladd.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Skilladd.Application": "1.0.0"
+        },
+        "runtime": {
+          "Skilladd.Infrastructure.dll": {}
+        }
+      },
+      "Skilladd.Application/1.0.0": {
+        "dependencies": {
+          "Skilladd.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Skilladd.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Skilladd.Domain/1.0.0": {
+        "runtime": {
+          "Skilladd.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Skilladd.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Skilladd.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Skilladd.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xBWR4/51AUo=",
+  "dgSpecHash": "2FyGoTu/EZU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Damir-ilyasov\\RiderProjects\\skilladd\\backend\\src\\Skilladd.Infrastructure\\Skilladd.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/demian/projects/skilladd/backend/src/Skilladd.Infrastructure/Skilladd.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "/home/demian/.nuget/packages/csharpfunctionalextensions/3.7.0/csharpfunctionalextensions.3.7.0.nupkg.sha512",
+    "/home/demian/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512"
+  ],
   "logs": []
 }
