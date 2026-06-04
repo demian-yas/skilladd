@@ -37,7 +37,7 @@ public class Company
     
     public string? Description { get; private set; }
     
-    public string? LogoUrl { get; private set; } 
+    public string? LogoUrl { get; private set; }
     
     public string? Website { get; private set; }
     
@@ -52,9 +52,7 @@ public class Company
     public DateTime CreatedAt { get; private set; }
 
     public IReadOnlyList<JobPost> JobPosts => _jobPosts;
-
-    public int JobPostsCount => JobPosts.Count;
-
+    
     public static Result<Company> Create(Guid ownerId, string name, string slug, string? description, string? logoUrl, string? website,
         string? industry, CompanySize? size,
         string? location, DateTime createdAt)

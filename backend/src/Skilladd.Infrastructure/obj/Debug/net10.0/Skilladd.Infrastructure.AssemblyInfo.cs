@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Skilladd.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df9194fd8a23bc66b91a10f717c23f52c118a08a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65e96118024599adb38aad5f838e1e4fee41ede9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Skilladd.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Skilladd.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
