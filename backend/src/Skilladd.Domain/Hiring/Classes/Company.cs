@@ -1,19 +1,21 @@
 ﻿using CSharpFunctionalExtensions;
 using Skilladd.Domain.Hiring.Enum.EnumCompany;
-
+using Skilladd.Domain.Hiring.VO;
+    
 namespace Skilladd.Domain.Hiring.Classes;
 
-public class Company
+public class Company : Common.Entity<CompanyId>
 {
     private readonly List<JobPost> _jobPosts = [];
     
     // ef core
-    private Company() { }
-
-    private Company(Guid ownerId ,string name, string slug, string? description, string? logoUrl, string? website, string? industry,
-        CompanySize? size, string? location, DateTime createdAt)
+    private Company(CompanyId id) : base(id)
     {
-        Id = Guid.NewGuid();
+    }
+
+    private Company(CompanyId companyId, Guid ownerId ,string name, string slug, string? description, string? logoUrl, string? website, string? industry,
+        CompanySize? size, Location? location, DateTime createdAt) : base(companyId)
+    {
         OwnerId = ownerId;
         Name = name;
         Slug = slug;
@@ -27,25 +29,24 @@ public class Company
         CreatedAt = createdAt;
     }
     
-    public Guid Id { get; private set; }
-    
     public Guid OwnerId { get; private set; }
     
     public string Name { get; private set; } = null!;
     
+    //URL короткое
     public string Slug { get; private set; } = null!;
     
     public string? Description { get; private set; }
     
     public string? LogoUrl { get; private set; }
-    
+    //сайт компании
     public string? Website { get; private set; }
     
     public string? Industry { get; private set; }
     
-    public CompanySize? Size { get; set; }
+    public CompanySize? Size { get; private set; }
     
-    public string? Location { get; private set; }
+    public Location? Location { get; private set; }
     
     public bool IsVerified { get; private set; }
     
@@ -53,10 +54,11 @@ public class Company
 
     public IReadOnlyList<JobPost> JobPosts => _jobPosts;
     
-    public static Result<Company> Create(Guid ownerId, string name, string slug, string? description, string? logoUrl, string? website,
-        string? industry, CompanySize? size,
-        string? location, DateTime createdAt)
+    public static Result<Company> Create(CompanyId companyId,Guid ownerId, string name, string slug, string? description, string? logoUrl, string? website,
+        string? industry, CompanySize? size, double? latitude, double? longitude, DateTime createdAt)
     {
+        Location? location = null;
+        
         if (string.IsNullOrWhiteSpace(name))
             return Result.Failure<Company>("Name cannot be null or with whitespace");
         
@@ -73,12 +75,18 @@ public class Company
             return Result.Failure<Company>("Website cannot be null or with whitespace");
         
         if (string.IsNullOrWhiteSpace(industry))
-            return Result.Failure<Company>("Industry cannot be null or with whitespace");
+            return Result.Failure<Company>("Industry cannot be null or with whitespace ");
+
+        if (latitude.HasValue && longitude.HasValue)
+        {
+            var locationResult = Location.Create(latitude.Value, longitude.Value);
+            
+            if(locationResult.IsFailure)
+                return Result.Failure<Company>(locationResult.Error);
+            location = locationResult.Value;
+        }
         
-        if (string.IsNullOrWhiteSpace(location))
-            return Result.Failure<Company>("Location cannot be null or with whitespace");
-        
-        var company = new Company(ownerId ,name, slug, description, logoUrl, website, industry,
+        var company = new Company(companyId, ownerId ,name, slug, description, logoUrl, website, industry,
             size, location, createdAt);
         
         return Result.Success(company);

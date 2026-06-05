@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mja/nnbbtTo=",
+  "dgSpecHash": "Smr1OgGvMRQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Damir-ilyasov\\RiderProjects\\skilladd\\backend\\src\\Skilladd.Domain\\Skilladd.Domain.csproj",
+  "projectFilePath": "/home/demian/projects/skilladd/backend/src/Skilladd.Domain/Skilladd.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Damir-ilyasov\\.nuget\\packages\\csharpfunctionalextensions\\3.7.0\\csharpfunctionalextensions.3.7.0.nupkg.sha512"
+    "/home/demian/.nuget/packages/csharpfunctionalextensions/3.7.0/csharpfunctionalextensions.3.7.0.nupkg.sha512",
+    "/home/demian/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512"
   ],
   "logs": []
 }

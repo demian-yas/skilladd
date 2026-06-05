@@ -4,19 +4,20 @@ using Skilladd.Domain.Hiring.VO;
 
 namespace Skilladd.Domain.Hiring.Classes;
 
-public class JobPost
+public class JobPost : Common.Entity<JobPostId>
 {
     private readonly List<string> _skills = [];
     
     // ef core
-    private JobPost(){}
-
-    private JobPost(Guid authorId, Guid companyId, string title, 
-        string description, string requirements, Offer offer,EnumEmployment employment,
-        EnumFormat format, List<string> skills, 
-        DateTime? expiresAt)
+    private JobPost(JobPostId id) : base(id)
     {
-        Id = Guid.NewGuid();
+    }
+
+    private JobPost(JobPostId jobPostId ,Guid authorId, Guid companyId, string title, 
+        string description, string requirements, Offer offer, EnumEmployment employment,
+        EnumFormat format, List<string> skills, 
+        DateTime? expiresAt) : base(jobPostId)
+    {
         AuthorId = authorId;
         CompanyId = companyId;
         Title = title;
@@ -30,8 +31,6 @@ public class JobPost
         ExpiresAt = expiresAt;
         CreatedAt = DateTime.UtcNow;
     }
-    
-    public Guid Id { get; private set; }
     
     public Company? Company { get; private set; }
     public Guid CompanyId { get; private set; }
@@ -58,7 +57,7 @@ public class JobPost
     
     public DateTime CreatedAt { get; private set; }
 
-    public static Result<JobPost> Create(Guid authorId, Guid companyId, string title, 
+    public static Result<JobPost> Create(JobPostId jobPostId ,Guid authorId, Guid companyId, string title, 
         string description, string requirements, decimal? salaryFrom, 
         decimal? salaryTo, string currency, EnumEmployment employment,
         EnumFormat format, List<string> skills, 
@@ -76,7 +75,7 @@ public class JobPost
         if(offerResult.IsFailure)
             return Result.Failure<JobPost>(offerResult.Error);
         
-        var jobPostResult = new JobPost(authorId, companyId, title,
+        var jobPostResult = new JobPost(jobPostId, authorId, companyId, title,
             description, requirements, offerResult.Value, employment, format, skills,
             expiresAt);
         

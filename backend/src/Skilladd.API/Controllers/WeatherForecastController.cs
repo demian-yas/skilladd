@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Skilladd.Domain.Hiring;
+using Skilladd.Domain.Hiring.Classes;
+using Skilladd.Domain.Hiring.VO;
 
 namespace Skilladd.API.Controllers;
 

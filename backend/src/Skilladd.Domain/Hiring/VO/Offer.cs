@@ -19,13 +19,14 @@ public sealed record Offer
 
     public static Result<Offer> Create(decimal? salaryFrom, decimal? salaryTo, string currency)
     {
-        if (salaryFrom >= salaryTo)
-            return Result.Failure<Offer>("the minimum salary cannot be greater than the maximum salary");
-        
-        if (salaryFrom.HasValue && salaryFrom< 0)
+        if (salaryFrom < 0)
             return Result.Failure<Offer>("the minimum salary cannot be negative");
-        if (salaryTo.HasValue && salaryTo < 0)
+        
+        if (salaryTo < 0)
             return Result.Failure<Offer>("the maximum salary cannot be negative");
+        
+        if ((salaryFrom.HasValue && salaryTo.HasValue) && (salaryFrom.Value >= salaryTo.Value))
+            return Result.Failure<Offer>("the minimum salary cannot be greater than the maximum salary");
         
         if (string.IsNullOrWhiteSpace(currency))
             return Result.Failure<Offer>("Currency cannot be empty or have spaces");

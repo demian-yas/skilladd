@@ -2,7 +2,8 @@
 
 public enum CompanySize
 {
-    Big,
-    Medium,
-    Small
+    Startup,
+    SMB,
+    Enterprice,
+    Project
 }

@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="compose.yaml" />
+  </Folder>
   <Project Path="src/Skilladd.API/Skilladd.API.csproj" />
   <Project Path="src/Skilladd.Application/Skilladd.Application.csproj" />
   <Project Path="src/Skilladd.Domain/Skilladd.Domain.csproj" />
