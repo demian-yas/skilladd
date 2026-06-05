@@ -12,4 +12,6 @@ public sealed record CompanyId
     public static CompanyId NewCompanyId() => new(Guid.NewGuid());
     
     public static CompanyId Empty() => new(Guid.Empty);
+
+    public static CompanyId Create(Guid id) => new(id);
 }
