@@ -15,7 +15,7 @@ public sealed record Offer
     
     public decimal? SalaryTo { get; }
     
-    public string Currency { get; }
+    public string? Currency { get; }
 
     public static Result<Offer> Create(decimal? salaryFrom, decimal? salaryTo, string currency)
     {

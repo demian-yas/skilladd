@@ -1,13 +1,10 @@
+using Skilladd.Domain.Common;
+
 namespace Skilladd.Domain.Hiring.VO;
 
-public sealed record CompanyId
+public sealed record CompanyId : MethodsId
 {
-    private CompanyId(Guid value)
-    {
-        Value = value;
-    }
-    
-    public Guid Value { get; }
+    private CompanyId(Guid value) : base(value){}
     
     public static CompanyId NewCompanyId() => new(Guid.NewGuid());
     

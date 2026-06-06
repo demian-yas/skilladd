@@ -17,11 +17,43 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
             .HasConversion(
                 id => id.Value,
                 value => CompanyId.Create(value));
-
+ 
         builder.Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(100);
 
-        builder.Property(c => c.Location);
+        builder.Property(c => c.Slug)
+            .IsRequired()
+            .HasMaxLength(100);
+        
+        builder.Property(c => c.Description)
+            .HasMaxLength(500);
+
+        builder.Property(c => c.LogoUrl);
+        
+        builder.Property(c => c.Website)
+            .HasMaxLength(250);
+
+        builder.Property(c => c.Industry)
+            .HasMaxLength(100);
+
+        builder.Property(c => c.Size);
+        
+        builder.OwnsOne(c => c.Address, a =>
+            {
+                a.Property(c => c.Country).HasColumnName("country");
+                a.Property(c => c.City).HasColumnName("city");
+                a.Property(c => c.Street).HasColumnName("street");
+            }
+        );
+
+        builder.Property(c => c.Location)
+            .HasColumnType("jsonb");
+        
+        builder.Property(c => c.IsVerified)
+            .HasDefaultValue(false);
+
+        builder.Property(c => c.CreatedAt)
+            .HasDefaultValueSql("NOW()");
     }
 }
