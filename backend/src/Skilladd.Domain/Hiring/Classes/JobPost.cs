@@ -41,18 +41,23 @@ public class JobPost : Common.Entity<JobPostId>
     
     public string Description { get; private set; } = null!;
     
+    //обязательные навыки
     public string Requirements { get; private set; } = null!;
     
     public Offer Offer { get; private set; }
     
+    //тип занятости
     public EnumEmployment Employment { get; private set; }
     
+    //форма работы
     public EnumFormat Format { get; private set; }
     
     public IReadOnlyList<string> Skills =>  _skills;
     
+    //статус ваканасии
     public EnumStatus Status { get; private set; }
     
+    //время оканчания заказа
     public DateTime? ExpiresAt { get; private set; }
     
     public DateTime CreatedAt { get; private set; }
