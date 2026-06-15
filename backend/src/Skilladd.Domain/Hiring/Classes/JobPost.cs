@@ -13,7 +13,7 @@ public class JobPost : Common.Entity<JobPostId>
     {
     }
 
-    private JobPost(JobPostId jobPostId ,Guid authorId, Guid companyId, string title, 
+    private JobPost(JobPostId jobPostId ,Guid authorId, CompanyId companyId, string title, 
         string description, string requirements, Offer offer, EnumEmployment employment,
         EnumFormat format, List<string> skills, 
         DateTime? expiresAt) : base(jobPostId)
@@ -33,7 +33,7 @@ public class JobPost : Common.Entity<JobPostId>
     }
     
     public Company? Company { get; private set; }
-    public Guid CompanyId { get; private set; }
+    public CompanyId CompanyId { get; private set; }
     
     public Guid AuthorId { get; private set; }
     
@@ -62,7 +62,7 @@ public class JobPost : Common.Entity<JobPostId>
     
     public DateTime CreatedAt { get; private set; }
 
-    public static Result<JobPost> Create(JobPostId jobPostId ,Guid authorId, Guid companyId, string title, 
+    public static Result<JobPost> Create(JobPostId jobPostId ,Guid authorId, CompanyId companyId, string title, 
         string description, string requirements, decimal? salaryFrom, 
         decimal? salaryTo, string currency, EnumEmployment employment,
         EnumFormat format, List<string> skills, 

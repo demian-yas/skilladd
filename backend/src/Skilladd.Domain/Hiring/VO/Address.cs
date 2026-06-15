@@ -3,7 +3,7 @@ using CSharpFunctionalExtensions;
 namespace Skilladd.Domain.Hiring.VO;
 
 public sealed record Address
-{
+{ 
     private Address(string? country, string? city, string? street)
     {
         Country = country;

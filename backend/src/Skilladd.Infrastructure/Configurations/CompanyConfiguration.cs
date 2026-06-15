@@ -47,8 +47,10 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
             }
         );
 
-        builder.Property(c => c.Location)
-            .HasColumnType("jsonb");
+        builder.OwnsOne(c => c.Location, l =>
+        {
+            l.ToJson();
+        });
         
         builder.Property(c => c.IsVerified)
             .HasDefaultValue(false);

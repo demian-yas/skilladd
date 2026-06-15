@@ -4,6 +4,10 @@ namespace Skilladd.Domain.Hiring.VO;
 
 public sealed record Location
 {
+    private Location()
+    {
+    }
+
     private Location(double latitude, double longitude)
     {
         Latitude = latitude;
@@ -21,10 +25,10 @@ public sealed record Location
         if (double.IsNaN(longitude))
             return Result.Failure<Location>("longitude is NaN");
         
-        if (-90 > latitude && 90 < latitude)
+        if (-90 > latitude || 90 < latitude)
             return Result.Failure<Location>("-90 < latitude < 90");
         
-        if (-180 > longitude && 180 < longitude)
+        if (-180 > longitude || 180 < longitude)
             return Result.Failure<Location>("-180 < longitude < 180");
 
         return Result.Success<Location>( new Location(latitude, longitude));

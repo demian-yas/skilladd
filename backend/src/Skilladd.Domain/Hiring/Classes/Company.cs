@@ -7,7 +7,7 @@ namespace Skilladd.Domain.Hiring.Classes;
 public class Company : Common.Entity<CompanyId>
 {
     private readonly List<JobPost> _jobPosts = [];
-    
+
     // ef core
     private Company(CompanyId id) : base(id)
     {
@@ -81,9 +81,9 @@ public class Company : Common.Entity<CompanyId>
         if (string.IsNullOrWhiteSpace(industry))
             return Result.Failure<Company>("Industry cannot be null or with whitespace ");
 
-        if (string.IsNullOrWhiteSpace(country) &&
-            string.IsNullOrWhiteSpace(city) &&
-            string.IsNullOrWhiteSpace(street))
+        if (!string.IsNullOrWhiteSpace(country) ||
+            !string.IsNullOrWhiteSpace(city) ||
+            !string.IsNullOrWhiteSpace(street))
         {
             var addressResult = Address.Create(country, city, street);
             

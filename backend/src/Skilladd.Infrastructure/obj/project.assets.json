@@ -15,18 +15,18 @@
           }
         }
       },
-      "EntityFrameworkCore.NamingConventions/8.0.0": {
+      "EFCore.NamingConventions/10.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.0",
-          "Microsoft.EntityFrameworkCore.Relational": "8.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+          "Microsoft.EntityFrameworkCore": "[10.0.1, 11.0.0)",
+          "Microsoft.EntityFrameworkCore.Relational": "[10.0.1, 11.0.0)",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.1"
         },
         "compile": {
-          "lib/net8.0/EFCore.NamingConventions.dll": {}
+          "lib/net10.0/EFCore.NamingConventions.dll": {}
         },
         "runtime": {
-          "lib/net8.0/EFCore.NamingConventions.dll": {}
+          "lib/net10.0/EFCore.NamingConventions.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore/10.0.4": {
@@ -453,17 +453,16 @@
         "lib/netstandard2.0/CSharpFunctionalExtensions.xml"
       ]
     },
-    "EntityFrameworkCore.NamingConventions/8.0.0": {
-      "sha512": "VWL8W2C+sWEvr1bu3reHcvxwSUfUDrRb5ZUaSSPSgT4JZ5rtlWVtyp0oQSSoMVByChZ2Q5NVkQ6n9hQDw5Rf4g==",
+    "EFCore.NamingConventions/10.0.1": {
+      "sha512": "Xs5k8XfNKPkkQSkGmZkmDI1je0prLTdxse+s8PgTFZxyBrlrTLzTBUTVJtQKSsbvu4y+luAv8DdtO5SALJE++A==",
       "type": "package",
-      "path": "entityframeworkcore.namingconventions/8.0.0",
+      "path": "efcore.namingconventions/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
-        "entityframeworkcore.namingconventions.8.0.0.nupkg.sha512",
-        "entityframeworkcore.namingconventions.nuspec",
-        "lib/net8.0/EFCore.NamingConventions.dll"
+        "efcore.namingconventions.10.0.1.nupkg.sha512",
+        "efcore.namingconventions.nuspec",
+        "lib/net10.0/EFCore.NamingConventions.dll"
       ]
     },
     "Microsoft.EntityFrameworkCore/10.0.4": {
@@ -1055,7 +1054,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "EntityFrameworkCore.NamingConventions >= 8.0.0",
+      "EFCore.NamingConventions >= 10.0.1",
       "Microsoft.Extensions.Logging.Console >= 10.0.8",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 10.0.2",
       "Skilladd.Application >= 1.0.0"
@@ -1108,9 +1107,9 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
-          "EntityFrameworkCore.NamingConventions": {
+          "EFCore.NamingConventions": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[10.0.1, )"
           },
           "Microsoft.Extensions.Logging.Console": {
             "target": "Package",
