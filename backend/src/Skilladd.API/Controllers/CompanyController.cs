@@ -6,10 +6,10 @@ namespace Skilladd.API.Controllers;
 
 [ApiController]
 [Route("api")]
-public class WeatherForecastController : ControllerBase
+public class CompanyController : ControllerBase
 {
     [HttpGet]
-    public IActionResult Get(string title, string slug)
+    public async Task<IActionResult> Get(string title, string slug)
     {
         return Ok();
     }
