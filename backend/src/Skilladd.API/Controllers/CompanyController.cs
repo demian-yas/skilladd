@@ -8,8 +8,8 @@ namespace Skilladd.API.Controllers;
 [Route("api")]
 public class CompanyController : ControllerBase
 {
-    [HttpGet]
-    public async Task<IActionResult> Get(string title, string slug)
+    [HttpPost]
+    public async Task<IActionResult> AddCompanyAsync()
     {
         return Ok();
     }

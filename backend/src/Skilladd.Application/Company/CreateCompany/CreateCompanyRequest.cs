@@ -1,0 +1,11 @@
+using Skilladd.Domain.Hiring.Enum.EnumCompany;
+using Skilladd.Domain.Hiring.VO;
+
+namespace Skilladd.Application.Company.CreateCompany;
+
+public record CreateCompanyRequest(Guid ownerId ,string name, string slug, string? description, string? logoUrl, string? website, string? industry,
+    CompanySize? size, CreateCompanyAddressRequest? address ,CreateCompanyLocationRequest? location, DateTime createdAt);
+
+public record CreateCompanyAddressRequest(string? country, string? city, string? street);
+
+public record CreateCompanyLocationRequest(double latitude, double longitude); 

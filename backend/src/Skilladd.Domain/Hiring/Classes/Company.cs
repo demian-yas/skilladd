@@ -58,11 +58,8 @@ public class Company : Common.Entity<CompanyId>
     public IReadOnlyList<JobPost> JobPosts => _jobPosts;
     
     public static Result<Company> Create(CompanyId companyId,Guid ownerId, string name, string slug, string? description, string? logoUrl, string? website,
-        string? industry, CompanySize? size, string? country, string? city, string? street ,double? latitude, double? longitude, DateTime createdAt)
+        string? industry, CompanySize? size, Address address, Location location, DateTime createdAt)
     {
-        Address? address = null;
-        Location? location = null;
-        
         if (string.IsNullOrWhiteSpace(name))
             return Result.Failure<Company>("Name cannot be null or with whitespace");
         
@@ -80,26 +77,6 @@ public class Company : Common.Entity<CompanyId>
         
         if (string.IsNullOrWhiteSpace(industry))
             return Result.Failure<Company>("Industry cannot be null or with whitespace ");
-
-        if (!string.IsNullOrWhiteSpace(country) ||
-            !string.IsNullOrWhiteSpace(city) ||
-            !string.IsNullOrWhiteSpace(street))
-        {
-            var addressResult = Address.Create(country, city, street);
-            
-            if (addressResult.IsFailure)
-                return Result.Failure<Company>(addressResult.Error);
-            address = addressResult.Value;
-        }
-        
-        if (latitude.HasValue && longitude.HasValue)
-        {
-            var locationResult = Location.Create(latitude.Value, longitude.Value);
-            
-            if(locationResult.IsFailure)
-                return Result.Failure<Company>(locationResult.Error);
-            location = locationResult.Value;
-        }
         
         var company = new Company(companyId, ownerId ,name, slug, description, logoUrl, website, industry,
             size, address, location, createdAt);

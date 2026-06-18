@@ -11,8 +11,4 @@
       <ProjectReference Include="..\Skilladd.Domain\Skilladd.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Handlers\DTOs\" />
-    </ItemGroup>
-
 </Project>
