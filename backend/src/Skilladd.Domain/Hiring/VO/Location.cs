@@ -1,4 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
+using Skilladd.Domain.Common;
 
 namespace Skilladd.Domain.Hiring.VO;
 
@@ -17,20 +18,20 @@ public sealed record Location
     public double Latitude { get; }
     public double Longitude { get; }
 
-    public static Result<Location> Create(double latitude, double longitude)
+    public static Result<Location, Error> Create(double latitude, double longitude)
     {
         if (double.IsNaN(latitude))
-            return Result.Failure<Location>("latitude is NaN");
+            return Errors.General.ValueIsEmpty("latitude");
 
         if (double.IsNaN(longitude))
-            return Result.Failure<Location>("longitude is NaN");
+            return Errors.General.ValueIsEmpty("longitude");
         
         if (-90 > latitude || 90 < latitude)
-            return Result.Failure<Location>("-90 < latitude < 90");
+            return Errors.General.ValueIsInvalid("latitude");
         
         if (-180 > longitude || 180 < longitude)
-            return Result.Failure<Location>("-180 < longitude < 180");
+            return Errors.General.ValueIsInvalid("longitude");
 
-        return Result.Success<Location>( new Location(latitude, longitude));
+        return Result.Success<Location, Error>( new Location(latitude, longitude));
     }
 }    

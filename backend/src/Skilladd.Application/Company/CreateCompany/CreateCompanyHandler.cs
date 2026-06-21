@@ -1,4 +1,5 @@
 using CSharpFunctionalExtensions;
+using Skilladd.Domain.Common;
 using Skilladd.Domain.Hiring.VO;
 
 namespace Skilladd.Application.Company.CreateCompany;
@@ -12,7 +13,7 @@ public class CreateCompanyHandler
         _companyRepository = companyRepository;
     }
     
-    public async Task<Result<Guid, string>> CreateAsync(CreateCompanyRequest request,
+    public async Task<Result<Guid, Error>> CreateAsync(CreateCompanyRequest request,
         CancellationToken cancellationToken = default)
     {
         var companyId = CompanyId.NewCompanyId();
@@ -21,14 +22,11 @@ public class CreateCompanyHandler
             request.address.country,
             request.address.city,
             request.address.street);
-        
-        if (address.IsFailure)
-            return address.Error;
 
         var location = Location.Create(
             request.location.latitude,
             request.location.longitude);
-        
+
         if (location.IsFailure)
             return location.Error;
 
@@ -47,10 +45,10 @@ public class CreateCompanyHandler
             location.Value,
             request.createdAt
         );
-
+        
         if (company.IsFailure)
             return company.Error;
-
+        
         await _companyRepository.AddCompanyAsync(company.Value, cancellationToken);
         
         return companyId.Value;

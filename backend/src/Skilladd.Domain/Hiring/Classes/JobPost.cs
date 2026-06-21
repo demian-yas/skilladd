@@ -63,8 +63,7 @@ public class JobPost : Common.Entity<JobPostId>
     public DateTime CreatedAt { get; private set; }
 
     public static Result<JobPost> Create(JobPostId jobPostId ,Guid authorId, CompanyId companyId, string title, 
-        string description, string requirements, decimal? salaryFrom, 
-        decimal? salaryTo, string currency, EnumEmployment employment,
+        string description, string requirements, Offer offer ,EnumEmployment employment,
         EnumFormat format, List<string> skills, 
         DateTime? expiresAt)
     {
@@ -75,13 +74,9 @@ public class JobPost : Common.Entity<JobPostId>
             return Result.Failure<JobPost>("Description is required");
         if(string.IsNullOrWhiteSpace(requirements))
             return Result.Failure<JobPost>("Requirements is required");
-
-        var offerResult = Offer.Create(salaryFrom, salaryTo, currency);
-        if(offerResult.IsFailure)
-            return Result.Failure<JobPost>(offerResult.Error);
         
         var jobPostResult = new JobPost(jobPostId, authorId, companyId, title,
-            description, requirements, offerResult.Value, employment, format, skills,
+            description, requirements, offer, employment, format, skills,
             expiresAt);
         
         return Result.Success(jobPostResult);
