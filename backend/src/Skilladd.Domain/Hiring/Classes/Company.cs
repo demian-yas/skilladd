@@ -15,7 +15,7 @@ public class Company : Common.Entity<CompanyId>
     }
 
     private Company(CompanyId companyId, Guid ownerId ,string name, string slug, string? description, string? logoUrl, string? website, string? industry,
-        CompanySize? size, Address? address ,Location? location, DateTime createdAt) : base(companyId)
+        CompanySize? size, Address? address ,Location? location) : base(companyId)
     {
         OwnerId = ownerId;
         Name = name;
@@ -28,7 +28,7 @@ public class Company : Common.Entity<CompanyId>
         Address = address;
         Location = location;
         IsVerified = false;
-        CreatedAt = createdAt;
+        CreatedAt = DateTime.UtcNow;
     }
     
     public Guid OwnerId { get; private set; }
@@ -59,7 +59,7 @@ public class Company : Common.Entity<CompanyId>
     public IReadOnlyList<JobPost> JobPosts => _jobPosts;
     
     public static Result<Company, Error> Create(CompanyId companyId,Guid ownerId, string name, string slug, string? description, string? logoUrl, string? website,
-        string? industry, CompanySize? size, Address address, Location location, DateTime createdAt)
+        string? industry, CompanySize? size, Address address, Location location)
     {
         if (string.IsNullOrWhiteSpace(name))
             return Errors.General.ValueIsEmpty("name");
@@ -80,7 +80,7 @@ public class Company : Common.Entity<CompanyId>
             return Errors.General.ValueIsEmpty("industry");
         
         var company = new Company(companyId, ownerId ,name, slug, description, logoUrl, website, industry,
-            size, address, location, createdAt);
+            size, address, location);
         
         return company;
     }
