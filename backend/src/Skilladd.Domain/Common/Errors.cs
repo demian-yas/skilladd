@@ -36,4 +36,10 @@ public class Errors
             return Error.Validation("business.logic.is.invalid", $"the {forSalaryFrom} cannot be greater than the {forSalaryTo}");
         }
     }
+
+    public static class Company
+    {
+        public static Error CompanyAlreadyExist(string name)
+            => Error.Validation("company.already.exist", $"company {name} already exists");
+    }
 }

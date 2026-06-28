@@ -23,7 +23,7 @@ public record Error
         => new Error(code, message, ErrorType.Failure);
 
     public static Error Conflict(string code, string message)
-        => new Error(code, message, ErrorType.Conflict); 
+        => new Error(code, message, ErrorType.Conflict);
 }
 
 public enum ErrorType

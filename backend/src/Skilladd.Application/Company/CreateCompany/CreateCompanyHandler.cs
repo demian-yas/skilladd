@@ -16,6 +16,10 @@ public class CreateCompanyHandler
     public async Task<Result<Guid, Error>> CreateAsync(CreateCompanyRequest request,
         CancellationToken cancellationToken = default)
     {
+        var companyExist = await _companyRepository.GetCompanyByNameAsync(request.name);
+        if (companyExist.IsSuccess)
+            return Errors.Company.CompanyAlreadyExist(request.name);
+        
         var companyId = CompanyId.NewCompanyId();
         
         var address = Address.Create(
