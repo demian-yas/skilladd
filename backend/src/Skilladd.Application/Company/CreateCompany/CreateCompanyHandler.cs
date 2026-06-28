@@ -46,8 +46,7 @@ public class CreateCompanyHandler
             request.industry,
             request.size,
             address.Value,
-            location.Value,
-            request.createdAt
+            location.Value
         );
         
         if (company.IsFailure)

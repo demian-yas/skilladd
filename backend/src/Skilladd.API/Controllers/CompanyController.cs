@@ -17,10 +17,7 @@ public class CompanyController : ControllerBase
         CancellationToken cancellationToken = default)
     {
         var company = await createCompanyHandler.CreateAsync(request, cancellationToken);
-        
-        if (company.IsFailure)
-            return company.Error.ToErrorResponse();
-        
-        return Ok(company.Value);
+
+        return company.ToResponse();
     }
 }

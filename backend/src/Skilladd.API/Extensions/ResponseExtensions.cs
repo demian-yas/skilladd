@@ -1,11 +1,13 @@
+using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
+using Skilladd.API.Response;
 using Skilladd.Domain.Common;
 
 namespace Skilladd.API.Extensions;
 
 public static class ResponseExtensions
 {
-    public static ActionResult ToErrorResponse(this Error error)
+    public static ActionResult ToResponse(this Error error)
     {
         var statusCode = error.ErrorType switch
         {
@@ -15,8 +17,32 @@ public static class ResponseExtensions
             ErrorType.Failure => StatusCodes.Status500InternalServerError,
             _ => StatusCodes.Status500InternalServerError
         };
+
+        var response = Envelope.Error(error);
         
-        return new ObjectResult(error)
+        return new ObjectResult(response)
+        {
+            StatusCode =  statusCode
+        };
+    }
+    
+    public static ActionResult<T> ToResponse<T>(this Result<T, Error> result)
+    {
+        if (result.IsSuccess)
+            return new OkObjectResult(Envelope.Ok(result.Value));
+        
+        var statusCode = result.Error.ErrorType switch
+        {
+            ErrorType.Validation => StatusCodes.Status400BadRequest,
+            ErrorType.NotFound => StatusCodes.Status404NotFound,
+            ErrorType.Conflict => StatusCodes.Status409Conflict,
+            ErrorType.Failure => StatusCodes.Status500InternalServerError,
+            _ => StatusCodes.Status500InternalServerError
+        };
+
+        var response = Envelope.Error(result.Error);
+        
+        return new ObjectResult(response)
         {
             StatusCode =  statusCode
         };
