@@ -67,18 +67,6 @@ public class Company : Common.Entity<CompanyId>
         if (string.IsNullOrWhiteSpace(slug))
             return Errors.General.ValueIsEmpty("slug");
         
-        if (string.IsNullOrWhiteSpace(description))
-            return Errors.General.ValueIsEmpty("description");
-
-        if (string.IsNullOrWhiteSpace(logoUrl))
-            return Errors.General.ValueIsEmpty("logoUrl");
-
-        if (string.IsNullOrWhiteSpace(website))
-            return Errors.General.ValueIsEmpty("website");
-
-        if (string.IsNullOrWhiteSpace(industry))
-            return Errors.General.ValueIsEmpty("industry");
-        
         var company = new Company(companyId, ownerId ,name, slug, description, logoUrl, website, industry,
             size, address, location);
         
