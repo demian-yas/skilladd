@@ -1,5 +1,4 @@
 using Skilladd.Domain.Hiring.Enum.EnumCompany;
-using Skilladd.Domain.Hiring.VO;
 
 namespace Skilladd.Application.Company.CreateCompany;
 

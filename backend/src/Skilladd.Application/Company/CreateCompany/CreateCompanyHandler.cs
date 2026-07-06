@@ -1,4 +1,5 @@
 using CSharpFunctionalExtensions;
+using FluentValidation;
 using Skilladd.Domain.Common;
 using Skilladd.Domain.Hiring.VO;
 
@@ -7,16 +8,30 @@ namespace Skilladd.Application.Company.CreateCompany;
 public class CreateCompanyHandler
 {
     private readonly ICompanyRepository _companyRepository;
+    private readonly IValidator<CreateCompanyRequest> _validator;
 
-    public CreateCompanyHandler(ICompanyRepository companyRepository)
+    public CreateCompanyHandler(
+        ICompanyRepository companyRepository,
+        IValidator<CreateCompanyRequest> validator)
     {
         _companyRepository = companyRepository;
+        _validator = validator;
     }
     
     public async Task<Result<Guid, Error>> CreateAsync(CreateCompanyRequest request,
         CancellationToken cancellationToken = default)
     {
+        var validationResult = await _validator.ValidateAsync(request, cancellationToken);
+        if (validationResult.IsValid == false)
+        {
+            var errors = Error.Validation(
+                validationResult.Errors[0].ErrorCode,
+                validationResult.Errors[0].ErrorMessage);
+            return errors;
+        }
+        
         var companyExist = await _companyRepository.GetCompanyByNameAsync(request.name);
+        
         if (companyExist.IsSuccess)
             return Errors.Company.CompanyAlreadyExist(request.name);
         

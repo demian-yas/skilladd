@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "U1y7phhfp8M=",
+  "dgSpecHash": "0MEKdihm0SM=",
   "success": true,
   "projectFilePath": "/home/demian/projects/skilladd/backend/src/Skilladd.Infrastructure/Skilladd.Infrastructure.csproj",
   "expectedPackageFiles": [
     "/home/demian/.nuget/packages/csharpfunctionalextensions/3.7.0/csharpfunctionalextensions.3.7.0.nupkg.sha512",
     "/home/demian/.nuget/packages/efcore.namingconventions/10.0.1/efcore.namingconventions.10.0.1.nupkg.sha512",
+    "/home/demian/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
+    "/home/demian/.nuget/packages/fluentvalidation.aspnetcore/11.3.1/fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+    "/home/demian/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.11.0/fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "/home/demian/.nuget/packages/microsoft.entityframeworkcore/10.0.4/microsoft.entityframeworkcore.10.0.4.nupkg.sha512",
     "/home/demian/.nuget/packages/microsoft.entityframeworkcore.abstractions/10.0.4/microsoft.entityframeworkcore.abstractions.10.0.4.nupkg.sha512",
     "/home/demian/.nuget/packages/microsoft.entityframeworkcore.analyzers/10.0.4/microsoft.entityframeworkcore.analyzers.10.0.4.nupkg.sha512",

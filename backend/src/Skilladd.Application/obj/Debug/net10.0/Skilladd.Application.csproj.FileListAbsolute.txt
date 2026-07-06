@@ -30,5 +30,3 @@ C:/Users/Damir-ilyasov/RiderProjects/skilladd/backend/src/Skilladd.Application/o
 /home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/refint/Skilladd.Application.dll
 /home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/Skilladd.Application.pdb
 /home/demian/projects/skilladd/backend/src/Skilladd.Application/obj/Debug/net10.0/ref/Skilladd.Application.dll
-/home/demian/projects/skilladd/backend/src/Skilladd.Application/bin/Debug/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-/home/demian/projects/skilladd/backend/src/Skilladd.Application/bin/Debug/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml

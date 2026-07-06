@@ -190,3 +190,6 @@ C:/Users/Damir-ilyasov/RiderProjects/skilladd/backend/src/Skilladd.API/obj/Debug
 /home/demian/projects/skilladd/backend/src/Skilladd.API/obj/Debug/net10.0/Skilladd.API.pdb
 /home/demian/projects/skilladd/backend/src/Skilladd.API/obj/Debug/net10.0/Skilladd.API.genruntimeconfig.cache
 /home/demian/projects/skilladd/backend/src/Skilladd.API/obj/Debug/net10.0/ref/Skilladd.API.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/FluentValidation.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/FluentValidation.AspNetCore.dll
+/home/demian/projects/skilladd/backend/src/Skilladd.API/bin/Debug/net10.0/FluentValidation.DependencyInjectionExtensions.dll
